@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Eid:
+  = @episode.eid
+p
+  strong Name:
+  = @episode.name
+p
+  strong File:
+  = @episode.file
+p
+  strong Completed at:
+  = @episode.completed_at
+
+=> link_to 'Edit', edit_episode_path(@episode)
+'|
+=< link_to 'Back', episodes_path
