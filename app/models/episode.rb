@@ -24,4 +24,18 @@ class Episode < ApplicationRecord
     episode
   end
 
+  def self.import(dir_path)
+    counter = 0
+
+    Dir.new(dir_path).select{|f| !File.directory? f }.sort.each do |fn|
+      episode = Episode.assign_from_filename(fn)
+      if episode.save
+        counter += 1
+      else
+        puts "#{episode.eid}: #{episode.errors.full_messages.join(', ')}"
+      end
+    end
+    counter
+  end
+
 end
