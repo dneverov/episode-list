@@ -38,4 +38,7 @@ class Episode < ApplicationRecord
     counter
   end
 
+  def toggle_completed
+    update(completed_at: (completed_at? ? nil : Time.current))
+  end
 end

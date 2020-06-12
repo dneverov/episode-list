@@ -1,6 +1,6 @@
 h1 Listing episodes
 
-table
+/table
   thead
     tr
       th Eid
@@ -21,6 +21,17 @@ table
         td = link_to 'Show', episode
         td = link_to 'Edit', edit_episode_path(episode)
         td = link_to 'Destroy', episode, data: { confirm: 'Are you sure?' }, method: :delete
+
+.row.bg-light.border
+  .col-1 Eid
+  .col-7
+    | Name
+    .small.text-secondary File
+  .col-3
+
+- @episodes.each do |episode|
+  div id=("episode_row_#{episode.id}")
+    = render "episode_row", episode: episode
 
 br
 

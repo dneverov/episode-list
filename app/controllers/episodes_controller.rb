@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  before_action :set_episode, only: [:show, :edit, :update, :destroy]
+  before_action :set_episode, only: [:show, :edit, :update, :destroy, :toggle_completed]
 
   # GET /episodes
   # GET /episodes.json
@@ -59,6 +59,10 @@ class EpisodesController < ApplicationController
       format.html { redirect_to episodes_url, notice: 'Episode was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_completed
+    @episode.toggle_completed
   end
 
   private
