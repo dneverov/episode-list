@@ -6,16 +6,16 @@
         - @episode.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :eid
-    = f.number_field :eid
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :file
-    = f.text_field :file
-  .field
-    = f.label :completed_at
+  .form-group.row
+    = f.label :eid, class: "col-sm-2 col-form-label"
+    = f.number_field :eid, class: "form-control col-sm-2"
+  .form-group.row
+    = f.label :name, class: "col-sm-2 col-form-label"
+    = f.text_field :name, class: "form-control col-sm-5"
+  .form-group.row
+    = f.label :file, class: "col-sm-2 col-form-label"
+    = f.text_field :file, class: "form-control col-sm-5"
+  .form-group.row
+    = f.label :completed_at, class: "col-sm-2 col-form-label"
     = f.datetime_select :completed_at
-  .actions = f.submit
+  .actions = f.submit class: "btn btn-primary"
