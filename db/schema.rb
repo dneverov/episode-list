@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_234122) do
+ActiveRecord::Schema.define(version: 2020_06_12_181436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_06_11_234122) do
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["eid"], name: "index_episodes_on_eid", unique: true
+    t.index ["name"], name: "index_episodes_on_name", unique: true
   end
 
 end
