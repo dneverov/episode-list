@@ -1,6 +1,6 @@
 .row
   .col-1.border-bottom
-    = link_to episode.eid, toggle_completed_episode_path(episode), method: :patch, remote: true
+    = check_box_tag nil, nil, episode.completed_at?, { data: { url: toggle_completed_episode_path(episode), remote: true, method: :patch }}
 
   .col-7.border-bottom class=('text-success' if episode.completed_at?)
     = episode.name
