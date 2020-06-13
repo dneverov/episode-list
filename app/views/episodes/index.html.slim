@@ -1,27 +1,5 @@
 h1 Listing episodes
 
-/table
-  thead
-    tr
-      th Eid
-      th Name
-      th File
-      th Completed at
-      th
-      th
-      th
-
-  tbody
-    - @episodes.each do |episode|
-      tr
-        td = episode.eid
-        td = episode.name
-        td = episode.file
-        td = episode.completed_at
-        td = link_to 'Show', episode
-        td = link_to 'Edit', edit_episode_path(episode)
-        td = link_to 'Destroy', episode, data: { confirm: 'Are you sure?' }, method: :delete
-
 .row.bg-light.border
   .col-1 Eid
   .col-7
