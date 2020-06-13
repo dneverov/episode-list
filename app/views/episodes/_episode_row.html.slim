@@ -1,6 +1,8 @@
 .row
   .col-1.border-bottom
-    = check_box_tag nil, nil, episode.completed_at?, { data: { url: toggle_completed_episode_path(episode), remote: true, method: :patch }}
+    = check_box_tag nil, nil, episode.completed_at?, {class: 'mt-2', data: { url: toggle_completed_episode_path(episode), remote: true, method: :patch }}
+
+  .col-1.border-bottom = episode.eid
 
   .col-7.border-bottom class=('text-success' if episode.completed_at?)
     = episode.name
