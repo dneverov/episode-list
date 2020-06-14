@@ -4,7 +4,14 @@ class EpisodesController < ApplicationController
   # GET /episodes
   # GET /episodes.json
   def index
-    @episodes = Episode.order(:eid)#.all
+    @episodes = case params[:scope]
+    when "completed"
+      Episode.completed.order(:eid)
+    when "uncompleted"
+      Episode.uncompleted.order(:eid)
+    else
+      Episode.order(:eid)#.all
+    end
   end
 
   # GET /episodes/1
