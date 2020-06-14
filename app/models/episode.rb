@@ -14,6 +14,10 @@ class Episode < ApplicationRecord
   validates :eid, presence: true, uniqueness: true, numericality: { only_integer: true }
   validates :name, presence: true, uniqueness: true
 
+  scope :completed, -> { where.not(completed_at: nil) }
+  scope :uncompleted, -> { where(completed_at: nil) }
+  # scope :test_missing, -> { where.not(eid: 31..32) }
+
   def self.assign_from_filename(filename)
     filename_parts = File.basename(filename, ".*").split("-")
     eid = filename_parts.shift.to_i

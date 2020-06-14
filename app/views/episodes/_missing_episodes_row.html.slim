@@ -1,0 +1,12 @@
+.row.bg-light.border-bottom.text-secondary
+  .col-1
+
+  .col-2.py-3
+    - if (delta = range.last - range.first - 1) > 2
+      = "#{range.first + 1} ... #{range.last - 1}"
+    - elsif delta == 2
+      = "#{range.first + 1}, #{range.last - 1}"
+    - else
+      = "#{range.first + 1}"
+
+  .col-8.py-3 = "Missing (#{delta})"

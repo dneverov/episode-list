@@ -8,9 +8,14 @@ h1 Listing episodes
     .small.text-secondary File
   .col-3
 
+- previous_episode = nil
 - @episodes.each do |episode|
+  - if previous_episode && (episode.eid - previous_episode.eid > 1)
+    = render "missing_episodes_row", range: [previous_episode.eid, episode.eid]
+
   div id=("episode_row_#{episode.id}")
     = render "episode_row", episode: episode
+  - previous_episode = episode
 
 br
 
