@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :episodes do
     patch :toggle_completed, on: :member
     collection do

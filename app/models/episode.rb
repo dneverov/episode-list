@@ -10,6 +10,11 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+# Indexes
+#
+#  index_episodes_on_eid   (eid) UNIQUE
+#  index_episodes_on_name  (name) UNIQUE
+#
 class Episode < ApplicationRecord
   validates :eid, presence: true, uniqueness: true, numericality: { only_integer: true }
   validates :name, presence: true, uniqueness: true
