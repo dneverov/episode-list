@@ -2,8 +2,8 @@ h1 Listing episodes
 
 .episode-links.my-2
   span.mx-2 = link_to 'All', episodes_path
-  span.mx-2 = link_to 'Completed', episodes_path(scope: :completed)
-  span.mx-2 = link_to 'Uncompleted', episodes_path(scope: :uncompleted)
+  span.mx-2 = link_to 'Completed', completed_episodes_path
+  span.mx-2 = link_to 'Uncompleted', uncompleted_episodes_path
 
 .row.bg-light.border
   .col-1
