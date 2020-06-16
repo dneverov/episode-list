@@ -1,16 +1,16 @@
 p#notice = notice
 
 p
-  strong Eid:
+  strong.mr-2 Eid:
   = @episode.eid
 p
-  strong Name:
+  strong.mr-2 Name:
   = @episode.name
 p
-  strong File:
+  strong.mr-2 File:
   = @episode.file
 p
-  strong Completed at:
+  strong.mr-2 Completed at:
   = @episode.completed_at
 
 => link_to 'Edit', edit_episode_path(@episode)

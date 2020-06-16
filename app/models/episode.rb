@@ -9,6 +9,7 @@
 #  name         :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  project_id   :integer
 #
 # Indexes
 #
@@ -16,6 +17,8 @@
 #  index_episodes_on_name  (name) UNIQUE
 #
 class Episode < ApplicationRecord
+  belongs_to :project
+
   validates :eid, presence: true, uniqueness: true, numericality: { only_integer: true }
   validates :name, presence: true, uniqueness: true
 

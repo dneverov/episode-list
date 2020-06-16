@@ -6,7 +6,10 @@
 
   .col-8 class=('text-success' if episode.completed_at?)
     = episode.name
-    .small.text-secondary = episode.file
+    .small.text-secondary
+      = episode.file
+      - if episode.project
+        span.pl-2.text-info = episode.project.name
   .col-2
     = link_to 'Show', episode
     span.ml-2
