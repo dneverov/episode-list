@@ -8,20 +8,20 @@ nav.navbar.sticky-top.navbar-light.navbar-expand-lg
       li.nav-item.active
         = link_to "Episodes", episodes_path, class: 'nav-link'
 
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+          | Filter
+        .dropdown-menu[aria-labelledby="navbarDropdown"]
+          a.dropdown-item[href="#{completed_episodes_path}"]
+            | Completed
+          a.dropdown-item[href="#{uncompleted_episodes_path}"]
+            | Uncompleted
+          .dropdown-divider
+          a.dropdown-item[href="#{episodes_path}"]
+            | All
       li.nav-item
         = link_to "Projects", projects_path, class: 'nav-link'
 
-      li.nav-item.dropdown
-        a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Dropdown
-        .dropdown-menu[aria-labelledby="navbarDropdown"]
-          a.dropdown-item[href="#"]
-            | Action
-          a.dropdown-item[href="#"]
-            | Another action
-          .dropdown-divider
-          a.dropdown-item[href="#"]
-            | Something else here
       li.nav-item
         a.nav-link.disabled[href="#" tabindex="-1" aria-disabled="true"]
           | Disabled
