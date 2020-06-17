@@ -17,7 +17,7 @@
 #  index_episodes_on_name  (name) UNIQUE
 #
 class Episode < ApplicationRecord
-  belongs_to :project
+  belongs_to :project, optional: true
 
   validates :eid, presence: true, uniqueness: true, numericality: { only_integer: true }
   validates :name, presence: true, uniqueness: true
