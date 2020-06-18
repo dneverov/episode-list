@@ -1,5 +1,11 @@
 p#notice = notice
 
+h1
+  | Project
+  small.text-secondary.ml-2
+    | #
+    = @project.id
+
 p
   strong.mr-2 Name:
   = @project.name
@@ -10,3 +16,21 @@ p
 => link_to 'Edit', edit_project_path(@project)
 '|
 =< link_to 'Back', projects_path
+
+h2.mt-5 Episodes
+
+.row.bg-light.border
+  .col-1 Eid
+  .col-8
+    | Name
+    span.small.text-secondary.ml-1 &#47; File
+
+- @project.episodes.order(:eid).each do |episode|
+  .row
+    .col-1 = episode.eid
+
+    .col-8 class=('text-success' if episode.completed_at?)
+      a[href="#{episode_path(episode.id)}"]
+        = episode.name
+      .small.text-secondary
+        = episode.file

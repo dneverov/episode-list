@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Project < ApplicationRecord
+  has_many :episodes
   before_validation :set_default_name
 
   validates :name, :path, presence: true, uniqueness: true
