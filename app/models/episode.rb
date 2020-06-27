@@ -7,6 +7,7 @@
 #  eid          :integer
 #  file         :string
 #  name         :string
+#  online       :boolean
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  project_id   :integer

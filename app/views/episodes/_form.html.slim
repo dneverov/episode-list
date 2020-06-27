@@ -8,6 +8,7 @@
 
   .form-group.row
     = f.label :eid, class: "col-sm-2 col-form-label"
+      | Episode Id
     = f.number_field :eid, class: "form-control col-sm-2"
 
   .form-group.row
@@ -24,4 +25,9 @@
   .form-group.row
     = f.label :completed_at, class: "col-sm-2 col-form-label"
     = f.datetime_select :completed_at
+
+  .form-group.row
+    = f.label :online, class: "col-sm-2 col-form-label"
+    = f.check_box :online
+
   .actions = f.submit class: "btn btn-primary"

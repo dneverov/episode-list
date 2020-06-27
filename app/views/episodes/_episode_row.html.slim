@@ -6,6 +6,9 @@
 
   .col-8 class=('text-success' if episode.completed_at?)
     = episode.name
+    - if episode.online
+      = link_to "https://gorails.com/episodes/#{episode.eid}"
+        i.fas.fa-globe-europe.pl-2
     .small.text-secondary
       = episode.file
       - if episode.project
