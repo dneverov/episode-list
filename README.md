@@ -8,7 +8,7 @@ denis@HP-dv6-laptop:~/workspace/dneverov/rails/gorails_forum$ git branch
   episode_31_time_zones
   episode_32_markdown
   episode_41_paranoia
-  episode_43_import-csv
+  episode_43_import-csv  44, 45, 46 -- DONE
 * master
 
 denis@HP-dv6-laptop:~/workspace/dneverov/rails/blog34$ git branch
